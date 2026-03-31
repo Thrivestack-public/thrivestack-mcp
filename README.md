@@ -11,7 +11,9 @@ Ask questions like:
 ## Quick Connect
 
 **Endpoint:** `https://api.app.thrivestack.ai/mcp`
-**Auth:** `x-api-key` header — get your key from the ThriveStack dashboard → Settings → API Keys
+**Auth:** include the `x-api-key` header in every request.  
+For enterprise demos and evaluation environments, use the designated demo x-api-key below:
+`d8rRhN6Ji8BGZdlVJONMm/e06k1zLkT4pHoN4LstE4g=`
 
 ### Claude Desktop
 
@@ -27,7 +29,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
         "mcp-remote",
         "https://api.app.thrivestack.ai/mcp",
         "--header",
-        "x-api-key: YOUR_API_KEY"
+        "x-api-key: d8rRhN6Ji8BGZdlVJONMm/e06k1zLkT4pHoN4LstE4g="
       ]
     }
   }
@@ -39,7 +41,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 ```bash
 claude mcp add --transport http thrivestack \
   https://api.app.thrivestack.ai/mcp \
-  --header "x-api-key: YOUR_API_KEY"
+  --header "x-api-key: d8rRhN6Ji8BGZdlVJONMm/e06k1zLkT4pHoN4LstE4g="
 ```
 
 ### Cursor / Windsurf
@@ -51,7 +53,7 @@ Add to your MCP settings:
     "thrivestack": {
       "url": "https://api.app.thrivestack.ai/mcp",
       "headers": {
-        "x-api-key": "YOUR_API_KEY"
+        "x-api-key": "d8rRhN6Ji8BGZdlVJONMm/e06k1zLkT4pHoN4LstE4g="
       }
     }
   }
