@@ -2,11 +2,45 @@
 
 Connect your AI agent (Claude, Cursor, ChatGPT) to [ThriveStack's](https://www.thrivestack.ai) Growth Intelligence platform via the [Model Context Protocol](https://modelcontextprotocol.io).
 
-Ask questions like:
-- *"Who are my top 10 accounts by engagement?"*
-- *"What's my MAU and MTU this month?"*
-- *"Show me PLG leads ready for sales outreach"*
-- *"Which features have the highest adoption?"*
+## Ask questions like:
+
+### Accounts
+- *"Who are my top 10 accounts by engagement this month?"*
+- *"List accounts that have been active in the last 30 days, sorted by last active time."*
+- *"Show me the first 20 accounts, sorted by health score descending."*
+
+### Company Name from Contacts
+- *"Given contacts with domain = thrivestack.ai, what company name do you infer?"*
+- *"Find the company name for contacts where email eq engineerpersona@thrivestack.ai."*
+- *"Derive company name from contacts in country eq United States and industry eq SaaS."*
+
+### Analytics
+#### MAU & MTU Count
+- *"What are my MAU and MTU for 2026-03?"*
+- *"Give me MAU vs MTU for 2026-01."*
+- *"For last month (2026-02), what were MAU and MTU?"*
+
+#### Event Count
+- *"How many events did we track in 2026-03?"*
+- *"What's the total event count for last_30_days?"*
+- *"Show event volume for last_7_days."*
+
+### GTM
+#### PLG-Qualified Leads
+- *"Show me PLG leads ready for sales outreach (type identify), first page."*
+- *"Get PLG leads of type group, page 2, 25 per page."*
+- *"Pull the newest 50 PLG-qualified leads (type identify)."*
+
+### Setup
+#### Start ThriveStack Telemetry Setup
+- *"Help me set up ThriveStack for marketing telemetry. Here's my API key: <key>."*
+- *"I need product instrumentation; use this ThriveStack API key: <key>."*
+- *"Set up both marketing + product telemetry. API key: <key>."*
+
+#### Get Setup Status
+- *"What's my setup completion status right now?"*
+- *"Which setup steps are still pending for my environment?"*
+- *"Show warnings/blockers in my onboarding/setup progress."*
 
 ## Quick Connect
 
