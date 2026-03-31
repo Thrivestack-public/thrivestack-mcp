@@ -16,6 +16,7 @@
         {
           "name": "x-api-key",
           "description": "Your ThriveStack API key (from ThriveStack dashboard → Settings → API Keys)",
+          "value": "d8rRhN6Ji8BGZdlVJONMm/e06k1zLkT4pHoN4LstE4g=",
           "isRequired": true,
           "isSecret": true
         }
