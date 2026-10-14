@@ -1,127 +1,110 @@
 # ThriveStack MCP Server
 
-Connect your AI agent (Claude, Cursor, ChatGPT) to [ThriveStack's](https://www.thrivestack.ai) Growth Intelligence platform via the [Model Context Protocol](https://modelcontextprotocol.io).
+Connect Claude, ChatGPT, Cursor or VS Code to your [ThriveStack](https://www.thrivestack.ai) **AI Visibility** data through the [Model Context Protocol](https://modelcontextprotocol.io). Ask how AI search engines mention and cite your brand, how you compare with competitors, and what to publish next.
 
-## Ask questions like:
+**Server URL:** `https://api.app.thrivestack.ai/mcp`
 
-### Accounts
-- *"Who are my top 10 accounts by engagement this month?"*
-- *"List accounts that have been active in the last 30 days, sorted by last active time."*
-- *"Show me the first 20 accounts, sorted by health score descending."*
+There is nothing to install and no API key to copy. You sign in with your ThriveStack account (OAuth 2.1) and approve the connection on a consent screen. What the assistant can see is limited to the brands in your own ThriveStack account.
 
-### Company Name from Contacts
-- *"Given contacts with domain = thrivestack.ai, what company name do you infer?"*
-- *"Find the company name for contacts where email eq engineerpersona@thrivestack.ai."*
-- *"Derive company name from contacts in country eq United States and industry eq SaaS."*
+## What you can ask
 
-### Analytics
-#### MAU & MTU Count
-- *"What are my MAU and MTU for 2026-03?"*
-- *"Give me MAU vs MTU for 2026-01."*
-- *"For last month (2026-02), what were MAU and MTU?"*
+- *"Which brands can I access, and how visible is each one in AI search?"*
+- *"Show the AI visibility report for example.com: overall visibility, average position and the top topics."*
+- *"Which of my tracked questions don't mention us, and which engines cite our competitors instead?"*
+- *"How does our weekly visibility compare with our top three competitors?"*
+- *"Which of my pages are getting retrieved and cited by AI answers?"*
+- *"What content should we publish on our own site to close the biggest citation gaps?"*
+- *"Where could we earn mentions on Reddit, G2 or other third-party sites?"*
+- *"What technical changes would make our site easier for AI crawlers to use?"*
+- *"Draft an outline for the top recommended article."*
 
-#### Event Count
-- *"How many events did we track in 2026-03?"*
-- *"What's the total event count for last_30_days?"*
-- *"Show event volume for last_7_days."*
+## Connect
 
-### GTM
-#### PLG-Qualified Leads
-- *"Show me PLG leads ready for sales outreach (type identify), first page."*
-- *"Get PLG leads of type group, page 2, 25 per page."*
-- *"Pull the newest 50 PLG-qualified leads (type identify)."*
+You will be asked to sign in to ThriveStack and then to **Allow access**. The consent screen shows which app is asking and where you will be sent back.
 
-### Setup
-#### Start ThriveStack Telemetry Setup
-- *"Help me set up ThriveStack for marketing telemetry. Here's my API key: <key>."*
-- *"I need product instrumentation; use this ThriveStack API key: <key>."*
-- *"Set up both marketing + product telemetry. API key: <key>."*
+### Claude (claude.ai, Desktop, mobile)
 
-#### Get Setup Status
-- *"What's my setup completion status right now?"*
-- *"Which setup steps are still pending for my environment?"*
-- *"Show warnings/blockers in my onboarding/setup progress."*
+1. Open **Settings → Connectors → Add custom connector**.
+2. Enter the name `ThriveStack` and the URL `https://api.app.thrivestack.ai/mcp`.
+3. Choose **Connect**, sign in to ThriveStack, and approve.
 
-## Quick Connect
-
-**Endpoint:** `https://api.app.thrivestack.ai/mcp`
-**Auth:** include the `x-api-key` header in every request.  
-For enterprise demos and evaluation environments, use the designated demo x-api-key below:
-`d8rRhN6Ji8BGZdlVJONMm/e06k1zLkT4pHoN4LstE4g=`
-
-### Claude Desktop
-
-Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "thrivestack": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://api.app.thrivestack.ai/mcp",
-        "--header",
-        "x-api-key: d8rRhN6Ji8BGZdlVJONMm/e06k1zLkT4pHoN4LstE4g="
-      ]
-    }
-  }
-}
-```
-
-### Claude Code CLI
+### Claude Code
 
 ```bash
-claude mcp add --transport http thrivestack \
-  https://api.app.thrivestack.ai/mcp \
-  --header "x-api-key: d8rRhN6Ji8BGZdlVJONMm/e06k1zLkT4pHoN4LstE4g="
+claude mcp add --transport http thrivestack https://api.app.thrivestack.ai/mcp
 ```
 
-### Cursor / Windsurf
+Then run `/mcp` inside Claude Code, pick **thrivestack**, and sign in when the browser opens.
 
-Add to your MCP settings:
+### ChatGPT
+
+Add a custom MCP connector (Developer mode) with the URL `https://api.app.thrivestack.ai/mcp`, choose OAuth, and sign in to ThriveStack when prompted.
+
+### Cursor
+
+Add this to your MCP settings (`~/.cursor/mcp.json` or the project's `.cursor/mcp.json`), then select **Connect** next to ThriveStack to sign in:
+
 ```json
 {
   "mcpServers": {
     "thrivestack": {
-      "url": "https://api.app.thrivestack.ai/mcp",
-      "headers": {
-        "x-api-key": "d8rRhN6Ji8BGZdlVJONMm/e06k1zLkT4pHoN4LstE4g="
-      }
+      "url": "https://api.app.thrivestack.ai/mcp"
     }
   }
 }
 ```
 
-## Available Tools
+### VS Code
 
-| Tool | Description |
+Add this to `.vscode/mcp.json`, then start the server from the editor and sign in when prompted:
+
+```json
+{
+  "servers": {
+    "thrivestack": {
+      "type": "http",
+      "url": "https://api.app.thrivestack.ai/mcp"
+    }
+  }
+}
+```
+
+## Available tools
+
+Every tool is read-only except the last one.
+
+| Tool | What it does |
 |---|---|
-| `list_accounts` | List accounts with engagement, enrichment, and acquisition data |
-| `get_account_details` | Deep details for a specific account |
-| `get_active_users_summary` | Active users and accounts summary |
-| `get_mau_mtu_count` | Monthly Active Users and Monthly Tracked Users |
-| `get_event_summary` | Event analytics summary |
-| `get_event_count` | Total event counts |
-| `get_feature_usage_trend` | Feature usage trends over time |
-| `get_feature_adoption` | Feature adoption timeline |
-| `get_activation_summary` | Activation funnel summary |
-| `get_activation_trend` | Activation trend data |
-| `get_account_engagement` | Per-account engagement trend |
-| `get_retention_data` | Retention cohort data |
-| `get_plg_leads` | PLG-qualified leads ready for sales |
-| `get_expansion_signals` | Accounts showing expansion signals |
-| `get_churn_signals` | Accounts at churn risk |
-| `get_acquisition_channels` | Acquisition channel breakdown |
+| `get_accessible_brands` | Lists the brands (domains) you can access in ThriveStack |
+| `get_brand_information` | The saved brand profile: description, industry, products, customer segments |
+| `get_domain_report` | Visibility report from the latest AI-visibility run: overall visibility, average position, topics and tracked questions |
+| `get_domain_prompts` | The tracked buyer questions for a brand, grouped by topic |
+| `get_citation_probe_data` | Raw evidence per question and AI engine from the latest run |
+| `get_competitor_visibility` | Weekly visibility of your brand next to your tracked competitors |
+| `get_url_report` | Which of your pages are retrieved and cited, and how often |
+| `get_owned_content_recommendations` | Content to publish on your own site to close citation gaps |
+| `get_earned_content_recommendations` | Third-party and earned-media opportunities |
+| `get_technical_recommendations` | AI-crawlability, on-page and entity-signal recommendations |
+| `get_ad_recommendations` | ChatGPT Ads recommendations |
+| `generate_content_outline` | Generates an outline for one content recommendation (nothing is saved) |
+| `generate_ad_creative_outline` | Generates a creative brief for one ads recommendation (nothing is saved) |
+| `save_content_recommendations` | Saves content recommendations to your brand as *suggested* items for your team |
+
+`save_content_recommendations` is the only tool that changes anything. It can only create new *suggested* items or refresh ones that are still *suggested*. It cannot approve, dismiss, assign or delete anything, and your client will ask you to confirm before it runs.
+
+## Privacy and access
+
+- Access is tied to the ThriveStack account you sign in with. The assistant cannot see other customers' data.
+- To disconnect, remove the connector from your AI app.
+- [Terms of Use](https://www.thrivestack.ai/legal/terms-of-use) · [Privacy Policy](https://www.thrivestack.ai/legal/privacy)
 
 ## Requirements
 
-- A [ThriveStack](https://www.thrivestack.ai) account with an API key
-- Any MCP-compatible client (Claude, Cursor, Windsurf, etc.)
+- A [ThriveStack](https://www.thrivestack.ai) account with AI Visibility set up for at least one brand
+- An MCP client that supports remote servers with OAuth (Claude, ChatGPT, Cursor, VS Code and others)
 
 ## Links
 
-- [ThriveStack Website](https://www.thrivestack.ai)
-- [ThriveStack Dashboard](https://app.thrivestack.ai)
-- [MCP Documentation](https://modelcontextprotocol.io)
+- [ThriveStack](https://www.thrivestack.ai)
+- [ThriveStack app](https://app.thrivestack.ai)
+- [Model Context Protocol](https://modelcontextprotocol.io)
