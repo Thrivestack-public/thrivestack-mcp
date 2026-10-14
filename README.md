@@ -98,6 +98,10 @@ Every tool is read-only except the last one.
 - To disconnect, remove the connector from your AI app.
 - [Terms of Use](https://www.thrivestack.ai/legal/terms-of-use) · [Privacy Policy](https://www.thrivestack.ai/legal/privacy)
 
+## Support
+
+Questions, problems or feedback: **support@thrivestack.ai**
+
 ## Requirements
 
 - A [ThriveStack](https://www.thrivestack.ai) account with AI Visibility set up for at least one brand
