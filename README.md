@@ -4,6 +4,10 @@ Connect Claude, Cursor, VS Code and other [Model Context Protocol](https://model
 
 **Server URL:** `https://api.app.thrivestack.ai/mcp`
 
+## Requirements
+
+A ThriveStack account with AI Visibility. The server and the plugin are free to install and connect; what you see is the AI Visibility data of your own ThriveStack account, and your account's plan decides what is available.
+
 ## Authentication
 
 Sign in with your ThriveStack account (OAuth 2.1) and approve the connection on the consent screen. Access is limited to the brands in your own ThriveStack account. Clients without OAuth support can use a Personal Access Token instead.

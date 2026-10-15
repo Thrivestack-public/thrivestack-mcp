@@ -2,7 +2,7 @@
   "name": "thrivestack",
   "displayName": "ThriveStack AI Visibility",
   "version": "1.0.0",
-  "description": "See how AI search engines mention and cite your brand, how you compare with competitors, and what to publish next, using your live ThriveStack AI Visibility data.",
+  "description": "See how AI search engines mention and cite your brand, how you compare with competitors, and what to publish next, using your live ThriveStack AI Visibility data. Requires a ThriveStack account with AI Visibility.",
   "author": {
     "name": "ThriveStack",
     "email": "support@thrivestack.ai"
