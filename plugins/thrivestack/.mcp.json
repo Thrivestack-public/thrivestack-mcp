@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "thrivestack": {
+      "type": "http",
+      "url": "https://api.app.thrivestack.ai/mcp"
+    }
+  }
+}
