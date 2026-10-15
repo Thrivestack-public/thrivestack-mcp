@@ -23,6 +23,27 @@ Questions, problems or feedback: **support@thrivestack.ai**
 
 [Terms of Use](https://www.thrivestack.ai/legal/terms-of-use) · [Privacy Policy](https://www.thrivestack.ai/legal/privacy)
 
+## Plugins
+
+This repository also publishes ThriveStack AI Visibility as a plugin, so you can install it in one step instead of configuring the server by hand.
+
+| Marketplace | What it reads from this repository |
+|---|---|
+| **Cursor** | [`.cursor-plugin/marketplace.json`](.cursor-plugin/marketplace.json) and the plugin in [`plugins/thrivestack`](plugins/thrivestack) |
+| **Claude** | The plugin folder [`plugins/thrivestack`](plugins/thrivestack) (`.claude-plugin/plugin.json` and `.mcp.json`) |
+
+The plugin only points at the hosted server and adds one skill; it runs nothing on your computer. See [`plugins/thrivestack/README.md`](plugins/thrivestack/README.md).
+
 ## About this repository
 
-This repository holds the [MCP Registry](https://registry.modelcontextprotocol.io) manifest (`server.json`) and an optional assistant persona (`thrivestack-analyst.md`). Documentation is kept on the docs site above so there is one place to keep up to date.
+```
+plugins/thrivestack/     the plugin (Cursor and Claude manifests, MCP server reference, skill, logo)
+.cursor-plugin/          Cursor marketplace manifest
+server.json              the MCP Registry manifest
+```
+
+Documentation is kept on the docs site above so there is one place to keep up to date.
+
+## License
+
+MIT, see [LICENSE](LICENSE).

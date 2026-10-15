@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "thrivestack": {
+      "url": "https://api.app.thrivestack.ai/mcp"
+    }
+  }
+}
