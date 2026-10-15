@@ -9,6 +9,10 @@ Ask your AI assistant how AI search engines such as ChatGPT, Claude, Gemini and 
 
 The plugin has no hooks, scripts, commands or local executables.
 
+## Requirements
+
+A ThriveStack account with AI Visibility. The plugin is free to install and connect; it shows the AI Visibility data of your own ThriveStack account, and your account's plan decides what is available.
+
 ## Connect
 
 Add the plugin (or just the server URL) in your assistant, then sign in with your ThriveStack account (OAuth 2.1) and approve the connection on the consent screen. No API key or token is stored in this repository or in the plugin. Clients without OAuth support can use a Personal Access Token created in ThriveStack.
